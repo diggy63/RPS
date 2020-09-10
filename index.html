@@ -3,6 +3,61 @@
   <head>
       <title>Rock Paper Scissors</title>
      <script>
+         function playround(pS, cS){
+             alert( pS );
+             alert( cS);
+             let oC = "test";
+             if(pS == "r"){
+                if(cS == "r"){
+                    oC = "its a tie";
+                }else if(cS == "p"){
+                    oC = "It's paper you lose";
+                }else{
+                    oC = "It's scissors you win";
+                }
+                }else if(pS == "p"){
+                    if(cS == "p"){
+                    oC = "its a tie";
+                }else if(cS == "s"){
+                    oC = "It's scissors you lose";
+                }else{
+                    oC = "It's rock you win";
+                }
+             }else{
+                if(cS == "s"){
+                    oC = "its a tie";
+                }else if(cS == "r"){
+                    oC = "It's rock you lose";
+                }else{
+                    oC = "It's paper you win";
+                }
+
+             }
+             return oC;
+         }
+         function computerPlay(){
+             let fact = Math.floor(Math.random() * 10);
+             let compC = "test";
+             if (fact < 4){
+                compC = "r";
+             }else if(fact > 6){
+                 compC = "p";
+             }else{
+                 compC = "s";
+             }
+             return compC;
+         }
+         var i;
+        for (i = 0; i < 5; i++) {
+            var text;
+            var playersC = prompt("Rock, Paper, Scissors?");
+            playersC = playersC.toLowerCase();
+            let pC = playersC.charAt(0);
+            let compC = computerPlay();
+            let answer = playround(pC, compC);
+            alert( answer );
+        }
+         
          
      </script> 
 </head>

@@ -4,8 +4,6 @@
       <title>Rock Paper Scissors</title>
      <script>
          function playround(pS, cS){
-             alert( pS );
-             alert( cS);
              let oC = "test";
              if(pS == "r"){
                 if(cS == "r"){
@@ -47,17 +45,20 @@
              }
              return compC;
          }
+
+         function game(){
          var i;
-        for (i = 0; i < 5; i++) {
-            var text;
-            var playersC = prompt("Rock, Paper, Scissors?");
-            playersC = playersC.toLowerCase();
-            let pC = playersC.charAt(0);
-            let compC = computerPlay();
-            let answer = playround(pC, compC);
-            alert( answer );
+            for (i = 0; i < 5; i++) {
+             var text;
+                var playersC = prompt("Rock, Paper, Scissors?");
+                playersC = playersC.toLowerCase();
+                let pC = playersC.charAt(0);
+                let compC = computerPlay();
+                let answer = playround(pC, compC);
+                alert( answer );
+            }
         }
-         
+         console.log(game());
          
      </script> 
 </head>
